@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Management Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="script.js"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">
+    ✈ Staff Management Portal
+  </h1>
+
+  <!-- View Flights -->
+  <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+    <h2 class="text-xl font-semibold mb-4">STAFFS</h2>
+    <button onclick="loadstaff()" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded mb-4">Load Staffs</button>
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="p-2">ID</th>
+          <th class="p-2">Staff name</th>
+          <th class="p-2">Role</th>
+          <th class="p-2">Date of joining</th>
+          <!-- <th class="p-2">Seats</th> -->
+        </tr>
+      </thead>
+      <tbody id="stafftable"></tbody>
+    </table>
+  </section>
+
+  <!-- Add Flight -->
+  <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+    <h2 class="text-xl font-semibold mb-4">Add New Staff</h2>
+    <form id="addFlightForm" class="space-y-4">
+      <input type="text" id="addName" placeholder="name" class="border p-2 w-full rounded" required>
+      <input type="text" id="addRole" placeholder="role" class="border p-2 w-full rounded" required>
+      <input type="datetime-local" id="dateofjoin" class="border p-2 w-full rounded" required>
+      <!-- <input type="number" id="seats" placeholder="Number of Seats" class="border p-2 w-full rounded" required> -->
+      <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Add Staffs</button>
+    </form>
+  </section>
+
+  <!-- Book Flight -->
+  <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+    <h2 class="text-xl font-semibold mb-4">Book a Flight</h2>
+    <form id="bookFlightForm" class="space-y-4">
+      <input type="number" id="updateSid" placeholder="S ID" class="border p-2 w-full rounded" required>
+      <input type="text" id="updateName" placeholder="name" class="border p-2 w-full rounded" required>
+      <button class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded">Update Staffs </button>
+    </form>
+  </section>
+
+  <!-- Upload Document -->
+  <section class="bg-white shadow-lg rounded-lg p-6">
+    <h2 class="text-xl font-semibold mb-4">Upload Document</h2>
+    <form id="uploadForm" enctype="multipart/form-data" class="space-y-4">
+      <input type="text" name="name" id="name" placeholder="File Name" class="border p-2 w-full rounded" required>
+      <input type="file" name="document" id="document" class="border p-2 w-full rounded" required>
+      <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Upload</button>
+    </form>
+  </section>
+
+  <!-- Delete Staff -->
+<section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+  <h2 class="text-xl font-semibold mb-4">Delete Staff</h2>
+  <form id="deleteStaffForm" class="space-y-4">
+    <input type="number" id="deleteSid" placeholder="Staff ID" class="border p-2 w-full rounded" required>
+    <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Delete Staff</button>
+  </form>
+</section>
+
+<!-- Download Files List -->
+<section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+  <h2 class="text-xl font-semibold mb-4">Uploaded Documents</h2>
+  <ul id="fileList" class="list-disc pl-6"></ul>
+</section>
+
+
+</body>
+</html>
